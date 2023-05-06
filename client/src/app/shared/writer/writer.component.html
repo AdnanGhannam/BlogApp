@@ -1,0 +1,13 @@
+<!-- TODO add link -->
+<a routerLink="/" class="blog-link">
+    <blog-avatar [avatar]="{ img: writer.img, name: writer.name }"></blog-avatar>
+</a>
+
+<a routerLink="/" class="blog-link">
+    <div class="writer__body">
+        <h4 class="bold">{{ writer.name }}</h4>
+        <p class="writer__bio">{{ writer.bio }}</p>
+    </div>
+</a>
+
+<button class="blog-button" [styled]="true">Follow</button>

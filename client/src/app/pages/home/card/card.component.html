@@ -1,0 +1,42 @@
+<div class="card__header">
+    <!-- TODO add link -->
+    <a routerLink="" class="blog-link">
+        <!-- TODO Add Avatar -->
+        <span>{{ user.name }}</span>
+    </a>
+    <span *ngIf="day !== undefined" class="card__day">
+    · {{ day }} day ago
+    </span>
+</div>
+
+<div class="card__body">
+    <!-- TODO add link -->
+    <a routerLink="" class="blog-link">
+        <h3 class="card__title bold">{{ blogTitle }}</h3>
+        <p class="card__content">{{ content }}</p>
+    </a>
+</div>
+
+<div class="card__footer">
+    <div class="card__footer__left">
+        <blog-chips class="card__tags" [chips]="tags"></blog-chips>
+        <span *ngIf="readingTime !== undefined" class="card__reading-time">
+        {{ readingTime }} min read
+        </span>
+    </div>
+    <div class="card__footer__right">
+        <button class="blog-button">
+            <span class="material-icons-outlined icon">
+                bookmark_add
+            </span>
+        </button>
+        <blog-menu>
+            <span button class="material-icons-outlined icon">
+                more_horiz
+            </span>
+            <div menu>
+                asdf
+            </div>
+        </blog-menu>
+    </div>
+</div>

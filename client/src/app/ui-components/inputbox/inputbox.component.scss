@@ -1,0 +1,31 @@
+@use "../../utilities/mixin.scss";
+
+:host(.inputbox) {
+    $spacing: .5em;
+    @include mixin.flex;
+    gap: $spacing;
+    padding: $spacing calc($spacing * 2);
+    border-radius: 100px;
+    background-color: var(--bg-inputbox);
+}
+
+.inputbox {
+    &__icon {
+        opacity: .3;
+    }
+
+    &__input {
+        background-color: transparent;
+        border: none;
+        font: inherit;
+        flex: 1;
+        
+        &:focus-visible {
+            outline: none;
+        }
+
+        &::placeholder {
+            opacity: .3;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@use "../../../utilities/mixin.scss";
+
+$spacing: 2em;
+
+:host(.side) {
+    display: block;
+    padding: 2.5em;
+}
+
+.side {
+    &__header {
+        border-bottom: 1px solid var(--clr-side-header-border);
+        padding: $spacing 0;
+
+        &__top {
+            @include mixin.flex(space-between);
+            margin-bottom: .5em;
+        }
+    }
+
+    &__section {
+        margin: $spacing 0;
+
+        &__title {
+            margin-bottom: .75em;
+        }
+
+        &__content {
+            &.writers {
+                @include mixin.flex(flex-start, flex-start, column);
+                gap: 1em;
+            }
+        }
+    }
+}

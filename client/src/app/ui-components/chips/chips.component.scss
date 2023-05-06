@@ -1,0 +1,21 @@
+@use '.././../utilities/mixin.scss';
+
+:host(.chips) {
+    font-size: .9em;
+    @include mixin.flex(flex-start, center, row, wrap);
+    gap: .75em;
+    color: var(--clr-chips);
+    user-select: none;
+}
+
+.chips {
+    &__chip {
+        padding: .5em .75em;
+        background-color: var(--bg-chips);
+        border-radius: 100px;
+
+        &:hover {
+            color: var(--clr-chips-hover);
+        }
+    }
+}

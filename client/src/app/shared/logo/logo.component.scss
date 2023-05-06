@@ -1,0 +1,21 @@
+@use "../../utilities/mixin.scss";
+
+:host(.logo) {
+    @include mixin.flex(flex-start);
+    gap: .1em;
+
+    span {
+        $size: 25px;
+        @include mixin.size($size);
+        display: inline-block;
+        background-color: #000;
+        border-radius: 50%;
+
+        &:nth-child(2) {
+            width: calc($size / 2);
+        }
+        &:nth-child(3) {
+            width: calc($size / 4);
+        }
+    }
+}

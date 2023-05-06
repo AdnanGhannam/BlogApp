@@ -1,0 +1,38 @@
+@use '../../utilities/mixin.scss';
+
+:host(.menu) {
+    display: block;
+    position: relative;
+}
+
+.menu {
+    &__content {
+        @include mixin.absolute();
+        background-color: var(--bg-menu);
+        border: 1px solid var(--clr-menu-border);
+        border-radius: 5px;
+        padding: 1em;
+        box-shadow: var(--bs-menu);
+        z-index: 10000;
+
+        &:not(.visible) {
+            display: none;
+        }
+
+        &.BottomLeft {
+            @include mixin.setPosition(100%, auto, auto, 0px);
+        }
+
+        &.BottomRight {
+            @include mixin.setPosition(100%, 0px, auto, auto);
+        }
+
+        &.TopLeft {
+            @include mixin.setPosition(auto, auto, 100%, 0px);
+        }
+
+        &.TopRight {
+            @include mixin.setPosition(auto, 0px, 100%, auto);
+        }
+    }
+}

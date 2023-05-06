@@ -1,0 +1,11 @@
+<label [for]="id" class="material-icons-outlined inputbox__icon" *ngIf="icon">
+    {{ icon }}
+</label>
+<input 
+    class="inputbox__input"
+    [id]="id"
+    [name]="name"
+    [placeholder]="placeholder"
+    [value]="_value"
+    [disabled]="disabled"
+    (change)="_onChange($event.target)" />

@@ -1,0 +1,8 @@
+<span #button>
+    <button class="blog-button" (click)="toggle()">
+        <ng-content select="[button]"></ng-content>
+    </button>
+</span>
+<div class="menu__content" [class.visible]="menuVisible" [class]="corner" #menuContent>
+    <ng-content select="[menu]"></ng-content>
+</div>

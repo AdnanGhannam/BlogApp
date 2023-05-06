@@ -1,0 +1,31 @@
+@use "../../utilities/mixin.scss";
+@use '../../utilities/mediaQuery.scss';
+
+:host(.page) {
+    .container {
+        @include mixin.flex(stretch, stretch);
+        gap: 1em;
+
+        // TODO make this better looking
+        @include mediaQuery.Laptops {
+            flex-direction: column-reverse;
+
+            .page__side {
+                border-left: none;
+                width: auto;
+                border-bottom: 1px solid var(--clr-page-side-border);
+            }
+        }
+    }
+}
+
+.page {
+    &__main {
+        flex: 1;
+    }
+
+    &__side {
+        width: var(--w-page-side);
+        border-left: 1px solid var(--clr-page-side-border);
+    }
+}

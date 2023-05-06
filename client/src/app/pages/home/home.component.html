@@ -1,0 +1,28 @@
+<blog-page>
+    <header class="home__header" *ngIf="title">
+        <h1 class="home__title">{{ title }}</h1>
+        <blog-taps #titleTapsRef
+            class="home__taps"
+            [taps]="titleTaps" 
+            ></blog-taps>
+    </header>
+    <header class="home__header" *ngIf="!title">
+        <blog-taps #tapsRef
+            class="home__taps"
+            [taps]="taps" 
+            ></blog-taps>
+    </header>
+    <section class="home__body">
+        <blog-card
+            [user]="{ name: 'Adnan Ghannam' }"
+            blogTitle="15 Project Ideas for Developers: From Easy to Hard"
+            content="Hey there! As a passionate C# developer myself, I’ve always been on the lookout for ways to level up my coding skills. I’m excited to share with you some mind-blowing hacks and insights that have helped me become a better programmer. So, grab a cup of coffee, and join me!"
+            [day]="1"
+            [readingTime]="1"
+            [tags]="[['Web Development', '/']]"
+        ></blog-card>
+    </section>
+    <div side>
+        <blog-side [title]="title"></blog-side>
+    </div>
+</blog-page>

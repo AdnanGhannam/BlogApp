@@ -1,0 +1,81 @@
+// font-family: 'PT Serif', serif;
+// font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --white: #fff;
+    --semi-white: #fafafa;
+    --green: #1a8917;
+    --dark-gray: #292929;
+    --gray: #757575;
+    --light-gray: 242, 242, 242;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: 'PT Serif', serif;
+    --clr-primary: var(--dark-gray);
+
+    --padding: 1.5em;
+    --clr-border: rgb(var(--light-gray));
+
+    //
+    --clr-button: var(--gray);
+    --clr-button-hover: var(--dark-gray);
+    --clr-button-border: var(--gray);
+    --clr-button-border-hover: var(--dark-gray);
+
+    --clr-menu-border: var(--clr-border);
+    --bg-menu: var(--white);
+    --bs-menu: rgb(230, 230, 230) 0px 1px 4px;
+
+    --clr-chips: var(--gray);
+    --clr-chips-hover: var(--dark-gray);
+    --bg-chips: rgb(var(--light-gray));
+
+    --clr-taps-border: var(--gray);
+
+    --bg-inputbox: var(--semi-white);
+
+    --clr-navbar-border: var(--clr-border);
+
+    --clr-home-border: var(--clr-border);
+
+    --clr-card-day: var(--gray);
+
+    --w-page-side: 350px;
+    --clr-page-side-border: var(--clr-border);
+
+    --clr-side-header-border: var(--clr-border);
+
+    --bg-avatar: var(--green);
+    --clr-avatar-border: var(--white);
+
+    --clr-writer-bio: var(--gray);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--ff-primary);
+    color: var(--clr-primary);
+}
+
+:is(h1, h2, h3, h4, h5, h6, strong):not(.bold) {
+    font-weight: 500;
+}
+
+.material-icons-outlined {
+    font-size: inherit;
+    user-select: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 0 var(--padding);
+}

@@ -1,0 +1,21 @@
+@use "../../utilities/mixin.scss";
+
+:host(.navbar) {
+    @include mixin.flex(space-between);
+    padding: .5em var(--padding);
+    border-bottom: 1px solid var(--clr-navbar-border);
+}
+
+.navbar {
+    &__box {
+        gap: 1em;
+
+        &:first-child {
+            @include mixin.flex(flex-start);
+        }
+
+        &:last-child {
+            @include mixin.flex(flex-end);
+        }
+    }
+}

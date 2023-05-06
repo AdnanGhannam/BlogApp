@@ -1,0 +1,25 @@
+@use '../../utilities/mixin.scss';
+
+$spacing: 1.5em;
+
+:host(.taps) {
+    @include mixin.flex(flex-start, center, row, wrap);
+    gap: $spacing;
+}
+
+.taps {
+    &__tap {
+        $m: calc($spacing - .5em);
+        margin: $m 0;
+        position: relative;
+
+        &.active {
+            &::after {
+                content: '';
+                @include mixin.absolute(calc(100% + $m), 0px, auto, 0px);
+                height: 1px;
+                background-color: var(--clr-taps-border);
+            }
+        }
+    }
+}

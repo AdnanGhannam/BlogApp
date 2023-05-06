@@ -1,0 +1,23 @@
+@use "../../utilities/mixin.scss";
+
+:host(.avatar) {
+    display: inline-block;
+    @include mixin.size(2.25rem);
+    position: relative;
+    background-clip: padding-box;
+    border: 1px solid var(--clr-avatar-border);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar {
+    &__img,
+    &__name {
+        display: inline-block;
+        @include mixin.absoluteCenter();
+    }
+
+    &__img {
+        @include mixin.size(100%);
+    }
+}

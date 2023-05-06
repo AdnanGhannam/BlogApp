@@ -1,0 +1,22 @@
+@use "../../utilities/mixin.scss";
+
+:host(.writer) {
+    font-size: .9em;
+    @include mixin.flex(center, flex-start);
+    gap: 1em;
+}
+
+.writer {
+    &__body {
+        flex: 1;
+    }
+
+    &__bio {
+        color: var(--clr-writer-bio);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

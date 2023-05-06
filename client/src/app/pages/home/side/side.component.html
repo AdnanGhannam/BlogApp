@@ -1,0 +1,32 @@
+<div class="side__header" *ngIf="title">
+    <div class="side__header__top">
+        <div class="count">
+            <h3 class="bold">217K</h3>
+            <span>Stories</span>
+        </div>
+        <div class="count">
+            <h3 class="bold">85K</h3>
+            <span>Writers</span>
+        </div>
+    </div>
+    <div>
+        <!-- TODO fetch writers -->
+        <blog-avatars-list [avatars]="avatars"></blog-avatars-list>
+    </div>
+</div>
+
+<div class="side__recommended side__section">
+    <h4 class="side__section__title">Recommended Topics</h4>
+    <!-- TODO fetch tags -->
+    <div class="side__section__content">
+        <blog-chips [chips]="tags"></blog-chips>
+    </div>
+</div>
+
+<div class="side__top-writers side__section">
+    <h4 class="side__section__title">Top Writers</h4>
+    <!-- TODO fetch writers -->
+    <div class="side__section__content writers">
+        <blog-writer *ngFor="let writer of writers" [writer]="writer"></blog-writer>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<button 
+    class="blog-button taps__tap" 
+    (click)="_onChange(i)" 
+    [class.active]="i == active"
+    *ngFor="let tap of taps; index as i">
+    {{ tap }}
+</button>
