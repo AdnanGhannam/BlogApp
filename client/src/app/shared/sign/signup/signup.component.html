@@ -1,0 +1,27 @@
+<blog-sign>
+    <form class="sign__form" (submit)="onSubmit(form)" #form="ngForm" form>
+        <input ngModel
+            required
+            class="sign__form__input"
+            placeholder="name"
+            name="name"
+            type="text" />
+        <span class="sign__form__message" [attr.data-message]="nameMessage"></span>
+        <input ngModel
+            required
+            class="sign__form__input"
+            placeholder="password"
+            name="password"
+            type="password" />
+        <span class="sign__form__message" [attr.data-message]="passwordMessage"></span>
+        <textarea ngModel
+            required
+            class="sign__form__input"
+            placeholder="bio"
+            name="bio"
+        ></textarea>
+        <button class="blog-button" type="submit" [styled]="true">Login</button>
+    </form>
+    <span note>No account? <a class="blog-link" routerLink="">Create one</a></span>
+</blog-sign>
+

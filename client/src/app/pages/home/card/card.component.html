@@ -1,17 +1,15 @@
 <div class="card__header">
     <!-- TODO add link -->
     <a routerLink="" class="blog-link">
-        <!-- TODO Add Avatar -->
-        <span>{{ user.name }}</span>
+        <blog-avatar [avatar]="user"></blog-avatar>
     </a>
     <span *ngIf="day !== undefined" class="card__day">
-    · {{ day }} day ago
+    · {{ day }} days ago
     </span>
 </div>
 
 <div class="card__body">
-    <!-- TODO add link -->
-    <a routerLink="" class="blog-link">
+    <a [routerLink]="toLink" class="blog-link">
         <h3 class="card__title bold">{{ blogTitle }}</h3>
         <p class="card__content">{{ content }}</p>
     </a>

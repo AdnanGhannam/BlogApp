@@ -21,6 +21,10 @@ const userSchema = new Schema({
         type: Number,
         immutable: true,
         default: Date.now()
+    },
+    nofp: {
+        type: Number,
+        default: 0
     }
 });
 

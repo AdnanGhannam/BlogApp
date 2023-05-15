@@ -6,17 +6,18 @@ import userRoutes from './routes/user.routes';
 import middlewares from './middlewares/middlewares';
 import postRoutes from './routes/post.routes';
 
+// Load dotenv
 env.config();
+
 db.init();
 
 const app = express();
-
 middlewares.config(app);
-
 routes.config(app,
     userRoutes,
     postRoutes);
 
+// Setting up a listener
 const { PORT } = process.env;
 if (!PORT) {
     throw new Error(`Can't find 'PORT' field in dotenv file!`);

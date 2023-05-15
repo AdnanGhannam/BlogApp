@@ -1,0 +1,47 @@
+@use "../../utilities/mixin.scss";
+
+:host(.write) {
+    font-family: var(--ff-primary);
+}
+
+.write {
+    &__form {
+        @include mixin.flex(flex-start, stretch, column);
+        gap: 1em;
+        padding: 2em;
+    }
+
+    &__title,
+    &__content,
+    &__tags {
+        font: inherit;
+
+        &::before {
+            content: attr(data-name);
+        }
+
+        &::placeholder {
+            opacity: .2;
+        }
+    }
+
+    &__title {
+        font-family: var(--ff-secondary);
+        font-size: 2.2rem;
+    }
+
+    &__content {
+        overflow: hidden;
+        font-size: 1.5rem;
+        resize: none;
+        height: auto;
+    }
+
+    &__tags {
+        font-size: 1.25rem;
+    }
+
+    &__button {
+        align-self: flex-end;
+    }
+}

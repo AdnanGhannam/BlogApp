@@ -2,7 +2,9 @@
     <div class="page__main">
         <ng-content></ng-content>
     </div>
-    <div class="page__side">
+    <div #side
+        class="page__side"
+        [class.visible]="side.children.length > 0">
         <ng-content select="[side]"></ng-content>
     </div>
 </div>

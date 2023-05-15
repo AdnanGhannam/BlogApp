@@ -1,0 +1,71 @@
+@use "../../utilities/mixin.scss";
+
+:host(.sign) {
+    @include mixin.flex(space-between, center, column);
+    gap: 1em;
+    padding: 2em;
+    font-family: var(--ff-secondary);
+
+}
+
+.sign {
+    ::ng-deep &__form {
+        font-family: var(--ff-primary);
+
+        &__input {
+            all: unset;
+            width: 100%;
+            padding: .25em .15em;
+            margin: .5em 0;
+            border-bottom: 1px solid var(--clr-login-input-border);
+
+            &:focus-within,
+            &:hover {
+                border-bottom-color: var(--clr-login-input-border-hover);
+            }
+
+            &.ng-touched.ng-invalid {
+                + .sign__form__message::after {
+                    content: "This field is required";
+                }
+            }
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        &__message {
+            &::after {
+                content: attr(data-message);
+                font-size: .75em;
+                color: var(--clr-login-message);
+            }
+
+        }
+
+        .blog-button {
+            margin: 1em;
+            width: 100%;
+            background-color: var(--bg-login-button);
+            color: var(--clr-login-button) !important;
+        }
+    }
+
+    ::ng-deep &__note {
+        .blog-link {
+            color: var(--clr-login-note) !important;
+            font-weight: 600;
+        }
+    }
+
+    &__info {
+        color: var(--clr-login-info);
+        font-size: .8em;
+        font-weight: 300;
+
+        .blog-link {
+            text-decoration: underline;
+        }
+    }
+}

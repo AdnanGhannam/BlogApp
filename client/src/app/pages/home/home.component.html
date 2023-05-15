@@ -1,3 +1,4 @@
+<blog-login></blog-login>
 <blog-page>
     <header class="home__header" *ngIf="title">
         <h1 class="home__title">{{ title }}</h1>
@@ -13,13 +14,14 @@
             ></blog-taps>
     </header>
     <section class="home__body">
-        <blog-card
-            [user]="{ name: 'Adnan Ghannam' }"
-            blogTitle="15 Project Ideas for Developers: From Easy to Hard"
-            content="Hey there! As a passionate C# developer myself, I’ve always been on the lookout for ways to level up my coding skills. I’m excited to share with you some mind-blowing hacks and insights that have helped me become a better programmer. So, grab a cup of coffee, and join me!"
-            [day]="1"
+        <blog-card *ngFor="let blog of blogs"
+            [toLink]="'/blog/' + blog._id"
+            [user]="blog.author"
+            [blogTitle]="blog.title"
+            [content]="blog.content"
+            [day]="calcDays(blog.creationTime)"
             [readingTime]="1"
-            [tags]="[['Web Development', '/']]"
+            [tags]="blog.tags"
         ></blog-card>
     </section>
     <div side>

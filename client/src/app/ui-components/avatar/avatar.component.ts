@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input, ViewChild } from '@angular/core';
 
 export type Avatar = {
   img?: string | null;
@@ -15,6 +15,7 @@ export type Avatar = {
 })
 export class AvatarComponent {
   @Input() avatar!: Avatar;
+  @ViewChild("img") img?: ElementRef<HTMLImageElement>;
 
   @HostBinding("style.backgroundColor") get getBackgroundColor() {
     return this.avatar.img ? "transparent" : "var(--bg-avatar)";
@@ -24,5 +25,11 @@ export class AvatarComponent {
   }
   @HostBinding('attr.title') get getTitle() {
     return this.avatar.name;
+  }
+
+  ngAfterViewInit() {
+    this.img?.nativeElement.addEventListener("error", function() {
+      this.src = "";
+    })
   }
 }

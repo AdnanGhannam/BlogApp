@@ -1,2 +1,2 @@
-<img [src]="avatar.img" *ngIf="avatar.img" class="avatar__img"/>
-<span *ngIf="!avatar.img" class="avatar__name">{{ avatar.name[0] }}</span>
+<img #img [src]="avatar.img" *ngIf="img?.nativeElement?.src" class="avatar__img"/>
+<span *ngIf="!img?.nativeElement?.src" class="avatar__name">{{ avatar.name[0] }}</span>

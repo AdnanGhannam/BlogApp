@@ -25,7 +25,9 @@
     }
 
     &__side {
-        width: var(--w-page-side);
-        border-left: 1px solid var(--clr-page-side-border);
+        &.visible {
+            width: var(--w-page-side);
+            border-left: 1px solid var(--clr-page-side-border);
+        }
     }
 }

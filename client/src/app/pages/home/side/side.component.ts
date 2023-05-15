@@ -1,6 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 import { User } from 'src/app/types';
 import { Avatar } from 'src/app/ui-components/avatar/avatar.component';
+import { Chip } from 'src/app/ui-components/chips/chips.component';
 
 @Component({
   selector: 'blog-side',
@@ -68,10 +69,10 @@ export class SideComponent {
     { img: "assets/images/user-test.bmp", name: "Adnan" },
   ];
 
-  tags: [string, string][] = [
-    ['Javascript', ''], 
-    ['Programming', ''],
-    ['Typescript', ''],
-    ['Software Enginering', '']
+  tags: Chip[] = [
+    // { 'Javascript'}
+    // 'Programming',
+    // 'Typescript',
+    // 'Software Enginering'
   ];
 }

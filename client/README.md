@@ -23,7 +23,8 @@
 - Link
 - Taps
 - Inputbox (Needs some changes)
-
-- Tooltip
 - Avatar
 - AvatarsList
+
+## TODOS:
+- RequestState type

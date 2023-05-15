@@ -6,6 +6,7 @@
     --white: #fff;
     --semi-white: #fafafa;
     --green: #1a8917;
+    --red: #e23237;
     --dark-gray: #292929;
     --gray: #757575;
     --light-gray: 242, 242, 242;
@@ -47,9 +48,17 @@
     --clr-side-header-border: var(--clr-border);
 
     --bg-avatar: var(--green);
-    --clr-avatar-border: var(--white);
+    --clr-avatar-border: var(--gray);
 
     --clr-writer-bio: var(--gray);
+
+    --clr-login-info: var(--gray);
+    --clr-login-note: var(--green);
+    --clr-login-input-border: rgb(var(--light-gray));
+    --clr-login-input-border-hover: var(--gray);
+    --clr-login-button: var(--white);
+    --bg-login-button: var(--dark-gray);
+    --clr-login-message: var(--red);
 }
 
 *,
@@ -78,4 +87,12 @@ body {
     max-width: 1100px;
     margin-inline: auto;
     padding: 0 var(--padding);
+}
+
+.input {
+    border: none;
+
+    &:focus-visible {
+        outline: none;
+    }
 }

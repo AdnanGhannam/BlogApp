@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'blog-navbar',
@@ -9,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  constructor(private router: Router) { }
 
+  toWritePage() {
+    this.router.navigateByUrl("/write");
+  }
 }

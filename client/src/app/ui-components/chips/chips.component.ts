@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 
-export type Chip = [
-  text: string,
-  url: string
-];
+export type Chip = {
+  id: string;
+  name: string;
+}
 
 /**
   <blog-chips [chips]="chips"></blog-chips>

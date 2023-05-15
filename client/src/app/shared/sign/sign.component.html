@@ -1,0 +1,16 @@
+<h1 class="sign__title">{{ title }}</h1>
+<p>{{ subTitle }}</p>
+
+<ng-content select="[form]"></ng-content>
+
+<p class="sign__note">
+    <ng-content select="[note]"></ng-content>
+</p>
+
+<!-- <p class="sign__info">Forgot password? <a class="blog-link" [routerLink]="">reset password</a></p> -->
+<p class="sign__info">
+    Click "Sign In" to agree to our blog's 
+    <a class="blog-link" [routerLink]="">Terms of Service</a>
+    and acknowledge that our blog's 
+    <a class="blog-link" [routerLink]="">Privacy Policy</a> applies to you.
+</p>

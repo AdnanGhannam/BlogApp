@@ -1,0 +1,23 @@
+@use "../../utilities/mixin.scss";
+
+:host(.blog) {
+    
+    .menu-button {
+        font-size: 1.25em;
+    }
+}
+
+.blog {
+    &__header {
+        @include mixin.flex(space-between);
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    
+    &__content {
+        font-family: var(--ff-secondary);
+    }
+}

@@ -6,6 +6,7 @@ import db from "../models/models";
 const getPostsEndpoint: RequestHandler = (req, res) => {
     db.Post
         .find()
+        .populate(["author", "tags"])
         .exec()
         .then(posts => {
             res.status(200)
@@ -28,6 +29,7 @@ const getPostEndpoint: RequestHandler = (req, res) => {
 
     db.Post
         .findById(id)
+        .populate(["author", "tags"])
         .exec()
         .then(post => {
             if (!post)  {
@@ -47,7 +49,7 @@ const getPostEndpoint: RequestHandler = (req, res) => {
         });
 };
 
-const createPostEndpoint: RequestHandler = (req, res) => {
+const createPostEndpoint: RequestHandler = async (req, res) => {
     if (!Object.keys(req.body).length) {
         return res
             .status(400)
@@ -57,7 +59,22 @@ const createPostEndpoint: RequestHandler = (req, res) => {
     const authorId = req.headers.userId;
     
     const { title, content, tags } = req.body;
-    const post = new db.Post({ title, content, author: authorId, tags });
+
+    // Add Tags
+    let tagsIds: string[] = [];
+
+    for (const tag of tags) {
+        let dbTag = await db.Tag.findOne({ name: tag.trim() });
+
+        if (!dbTag) {
+            dbTag = await db.Tag.create({ name: tag.trim() });
+        }
+
+        tagsIds.push((await dbTag.save()).id);
+    }
+
+    // Add Post
+    const post = new db.Post({ title, content, author: authorId, tags: tagsIds });
 
     post.save()
         .then(results => {

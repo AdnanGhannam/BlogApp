@@ -11,6 +11,7 @@ import { Chip } from 'src/app/ui-components/chips/chips.component';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+  @Input() toLink?: string;
   @Input() user!: User;
   @Input() day?: number;
   @Input() blogTitle!: string;
